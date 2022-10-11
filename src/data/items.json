@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "name": "Book",
+      "price": 10.99,
+      "imgUrl": "/imgs/book.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Computer",
+      "price": 1199,
+      "imgUrl": "/imgs/computer.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Banana",
+      "price": 1.05,
+      "imgUrl": "/imgs/banana.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Car",
+      "price": 150000,
+      "imgUrl": "/imgs/mustang.jpg"
+    },
+    {
+      "id": 5,
+      "name": "House",
+      "price": 1000000,
+      "imgUrl": "/imgs/house.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Ipad Pro",
+      "price": 1000,
+      "imgUrl": "/imgs/ipad.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Gaming Pc",
+      "price": 5000,
+      "imgUrl": "/imgs/pcgmaing.jpg"
+    }
+  ]
