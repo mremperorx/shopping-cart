@@ -11,7 +11,7 @@ export function Home() {
         <div className="h-screen w-full">
         <h1>Home</h1>
         <ImageSlider />
-        <Button href="/store">Check here!</Button> 
+        <Link to="/store"><Button>Check here!</Button></Link>
         </div>
     ) 
 }
