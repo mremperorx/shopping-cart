@@ -5,6 +5,7 @@ import { Store } from "./pages/Store"
 import { About } from "./pages/About"
 import {Navbar} from "./components/navbar"
 import { ShoppingCartProvider } from "./context/ShoppingCartContext"
+import PaymentGateway from "./PaymentGateWay/PaymentGateway"
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
     <Route path="/" element = {<Home/>} />
     <Route path="/store" element= {<Store/>} />
     <Route path="/about" element = {<About/>} />
+    <Route path="/checkout" element = {<PaymentGateway/>} />
   </Routes>
  </Container>
  </ShoppingCartProvider >

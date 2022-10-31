@@ -1,5 +1,5 @@
-import { createContext, ReactNode, useContext, useState } from "react";
-import {ShoppingCart} from "../components/ShoppingCart"
+import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import {ShoppingCart} from "../components/Cart/ShoppingCart"
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 type ShoppingCartProviderProps = {
@@ -31,6 +31,7 @@ export function useShoppingCart() {
 
 }
 
+
 export function ShoppingCartProvider ({ children } : ShoppingCartProviderProps) 
 {
     const [isOpen, setIsOpen] = useState(false)
@@ -42,8 +43,10 @@ export function ShoppingCartProvider ({ children } : ShoppingCartProviderProps)
     const closeCart =() => setIsOpen(false)
 
     function getItemQuantity(id:number ){
+        
         return cartItems.find(item => item.id === id)?.quantity || 0
     }
+
     function increaseCartQuantity(id:number){
         setCartItems(currItems => {
             if(currItems.find(item => item.id === id) == null){
@@ -59,6 +62,7 @@ export function ShoppingCartProvider ({ children } : ShoppingCartProviderProps)
             }
         })
     }
+    
     function decreaseCartQuantity(id:number){
         setCartItems(currItems => {
             if(currItems.find(item => item.id === id)?.quantity === 1){
@@ -79,6 +83,38 @@ export function ShoppingCartProvider ({ children } : ShoppingCartProviderProps)
             return currItems.filter(item => item.id !== id)
         })
     }
+
+    const [menItems, setMenItems] = useState([]);
+	const [womenItems, setWomenItems] = useState([]);
+
+    const fetchMenItems = async () => {
+		const data = await fetch(
+			"https://fakestoreapi.com/products/category/men's%20clothing"
+		);
+		const formattedData = await data.json();
+		const updatedData = formattedData.map((item: any) => {
+			return { ...item, inWishlist: false };
+		});
+		setMenItems(updatedData);
+	};
+
+
+    const fetchWomenItems = async () => {
+		const data = await fetch(
+			"https://fakestoreapi.com/products/category/women's%20clothing"
+		);
+		const formattedData = await data.json();
+		const updatedData = formattedData.map((item: any) => {
+			return { ...item, inWishlist: false };
+		});
+		setWomenItems(updatedData);
+	};
+    
+    useEffect(() => {
+		fetchMenItems();
+		fetchWomenItems();
+	}, []);
+
 
      return (
         <ShoppingCartContext.Provider value={{ getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart, cartItems, cartQuantity, openCart, closeCart}}>

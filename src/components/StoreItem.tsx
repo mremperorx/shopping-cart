@@ -1,3 +1,4 @@
+import React from "react";
 import { Card, Button } from "react-bootstrap"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import { formatCurrency } from "../utilities/formatCurreny"
@@ -20,7 +21,7 @@ export function StoreItem( {id, name, price, imgUrl}: StoreItemProps) {
 
         <Card.Body className="d-felx flex-column">
             <Card.Title className="d-flex justify-content-space-between align-item-baseline mb-4">
-              <span className="fs-2">{name}</span>
+              <span>{name}</span>
               <span className="ms-2 text-muted">{formatCurrency (price)}</span>
             </Card.Title>
 
@@ -30,7 +31,6 @@ export function StoreItem( {id, name, price, imgUrl}: StoreItemProps) {
             ) : (
             <div className="d-flex align-items-center flex-column" style={{gap: ".5rem"}}>
                 <div className="d-flex align-items-center flex-column" style={{gap: ".5rem"}}>
-                 
                  <Button onClick={() => decreaseCartQuantity(id)}>-</Button>
                  <div>
                  <span className="fs-3">{quantity}</span> in cart 

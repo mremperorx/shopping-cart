@@ -1,14 +1,15 @@
-import {Offcanvas, Stack} from "react-bootstrap"
-import { useShoppingCart } from "../context/ShoppingCartContext"
-import { formatCurrency } from "../utilities/formatCurreny"
+import {Button, Offcanvas, Stack} from "react-bootstrap"
+import { useShoppingCart } from "../../context/ShoppingCartContext"
+import { formatCurrency } from "../../utilities/formatCurreny"
 import { CartItem } from "./CartItem"
-import StoreItem from "../data/items.json"
+import StoreItem from "../../data/items.json"
 
 type ShoppingCartProps = {
     isOpen: boolean
 }
 
 export function ShoppingCart({ isOpen }: ShoppingCartProps) {
+  
 
     const {closeCart, cartItems} = useShoppingCart()
     return (
@@ -30,6 +31,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
               </div>
             </Stack>
         </Offcanvas.Body>
+        <Button href="/checkout">Checkout</Button>
     </Offcanvas>
     )
 }
