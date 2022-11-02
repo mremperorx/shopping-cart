@@ -1,6 +1,8 @@
 import {Badge, Button, Container, Nav, Navbar as NavbarBs} from "react-bootstrap"
-import {NavLink} from "react-router-dom"
+import {Link, NavLink} from "react-router-dom"
 import { useShoppingCart } from "../context/ShoppingCartContext"
+import LoginButton from "./Login/LoginButton"
+import LogoutButton from "./Login/LogoutButton"
 
 
 export function Navbar() {
@@ -8,7 +10,7 @@ export function Navbar() {
 
     return (
         <>
-        <NavbarBs sticky="top" className="bg-white shadow-sm mb-3">
+        <NavbarBs sticky="top" className="rounded-xl shadow-lg mb-3">
             <Container>
                 <Nav className="me-auto">
                     <Nav.Link to="/" as={NavLink}>
@@ -20,7 +22,13 @@ export function Navbar() {
                     <Nav.Link to="/about" as={NavLink}>
                      About
                     </Nav.Link>
+                    <LoginButton />
+                    <LogoutButton />
                 </Nav>
+                <div>
+                    <Link to="/profile"><Button>Profile</Button></Link>
+                </div>
+
                 {cartQuantity > 0 && (<Button onClick={openCart} style={{width: "3rem", height: "3rem", position: "relative"}}
                 variant="outline-primary"
                 className="rounded-circle">
@@ -35,6 +43,7 @@ export function Navbar() {
                     {cartQuantity}
                 </div>
                 </Button> )}
+
             </Container>
         </NavbarBs>
         </>
