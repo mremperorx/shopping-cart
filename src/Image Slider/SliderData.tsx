@@ -1,5 +1,10 @@
 export const SliderData = [
 	{
+		image: "https://i.pinimg.com/564x/fe/6a/01/fe6a01dca48720f08a194dd751fa47b3.jpg",
+		text: "",
+		
+	},
+	{
 		image: "https://images.unsplash.com/photo-1558191053-8edcb01e1da3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGZhc2hpb24lMjBzdG9yZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
 		text: "Check out our store below!",
 	},
