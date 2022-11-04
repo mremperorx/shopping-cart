@@ -17,7 +17,9 @@ const Profile = () => {
         <p className='text-center sm:text-left'>{user?.email}</p>
         <div className='text-center sm:text-left'>
         <h2>⬇️</h2>
+        <Button variant="danger">
         <LogoutButton />
+        </Button>
         </div>
         </Tilt>   
     ) || 
