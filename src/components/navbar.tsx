@@ -23,8 +23,9 @@ export function Navbar() {
         <div className="flex items-center md:order-2">
             <div className="rounded-full px-3 py-2 font-semibold bg-white bg-opacity-10 flex items-center group focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2">
             <LoginButton />
-            </div>
             <LogoutButton />
+            </div>
+           
 
             <Link to="/profile"><button className="text-white rounded-full bg-pink-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Profile</button></Link>
 
