@@ -83,39 +83,7 @@ export function ShoppingCartProvider ({ children } : ShoppingCartProviderProps)
             return currItems.filter(item => item.id !== id)
         })
     }
-
-    const [menItems, setMenItems] = useState([]);
-	const [womenItems, setWomenItems] = useState([]);
-
-    const fetchMenItems = async () => {
-		const data = await fetch(
-			"https://fakestoreapi.com/products/category/men's%20clothing"
-		);
-		const formattedData = await data.json();
-		const updatedData = formattedData.map((item: any) => {
-			return { ...item, inWishlist: false };
-		});
-		setMenItems(updatedData);
-	};
-
-
-    const fetchWomenItems = async () => {
-		const data = await fetch(
-			"https://fakestoreapi.com/products/category/women's%20clothing"
-		);
-		const formattedData = await data.json();
-		const updatedData = formattedData.map((item: any) => {
-			return { ...item, inWishlist: false };
-		});
-		setWomenItems(updatedData);
-	};
     
-    useEffect(() => {
-		fetchMenItems();
-		fetchWomenItems();
-	}, []);
-
-
      return (
         <ShoppingCartContext.Provider value={{ getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart, cartItems, cartQuantity, openCart, closeCart}}>
             {children}

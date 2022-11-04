@@ -59,7 +59,7 @@ const CreditCard = () => {
 
 
   return (
-       <div className="centerd">
+       <div className="flex">
         <form id="form">
             <div id="card">
                 <div className="header">

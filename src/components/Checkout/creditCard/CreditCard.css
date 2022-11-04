@@ -1,13 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
-}
 
 
 
@@ -33,6 +29,10 @@
   border-radius: 10px;
   box-shadow: 3px 3px 40px #545454e8;
   position: relative;
+  top: 50%;
+  left: 50%;
+  margin-top: 200px;
+  margin-left: -250px;
 }
 
 #form input,

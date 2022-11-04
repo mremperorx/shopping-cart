@@ -11,14 +11,17 @@ import CreditCard from "./components/Checkout/creditCard/CreditCard"
 import ProfilePage from "./pages/ProfilePage"
 
 
+
 function App() {
+  
  return (
-  <div className="font-inter gap-y-8 flex-col justify-center items-center dark:bg-gray-300 ">
+  <div className="text-black font-inter gap-y-8 flex-col justify-center items-center">
  <ShoppingCartProvider>
  <Navbar />
  <Container>
   <Routes>
     <Route path="/" element = {<Home/>} />
+    <Route path="/home" element = {<Home/>} />
     <Route path="/store" element= {<Store/>} />
     <Route path="/about" element = {<About/>} />
     <Route path="/checkout" element = {<Checkout/>} />
