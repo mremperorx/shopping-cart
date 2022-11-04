@@ -7,10 +7,10 @@ type StoreItemProps = {
     id: number
     name: string
     price: number
-    imgUrl: string
+    image: string
 }
 
-export function StoreItem( {id, name, price, imgUrl}: StoreItemProps) {
+export function StoreItem( {id, name, price, image}: StoreItemProps) {
 
     const {getItemQuantity, increaseCartQuantity,decreaseCartQuantity, removeFromCart} = useShoppingCart()
        
@@ -19,7 +19,7 @@ export function StoreItem( {id, name, price, imgUrl}: StoreItemProps) {
     return (
      <div className="w-full max-w-sm rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
         <a href="#">
-        <img className="p-8 rounded-t-lg" src={imgUrl} alt="product image"  height="200px" style={{objectFit: "cover"}} />
+        <img className="p-8 rounded-t-lg" src={image} alt="product image"  height="200px" style={{objectFit: "cover"}} />
     </a>
     <div className="px-5 pb-5">    
             <h5 className="text-xl font-semibold tracking-tight">{name}</h5>

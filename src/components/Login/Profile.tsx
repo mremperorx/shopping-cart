@@ -2,6 +2,7 @@ import { useAuth0 } from '@auth0/auth0-react'
 import Tilt from "react-parallax-tilt"
 import LogoutButton from './LogoutButton'
 import LoginButton from './LoginButton'
+import { Button } from 'react-bootstrap'
 
 
 const Profile = () => {
@@ -22,11 +23,13 @@ const Profile = () => {
     ) || 
     !isAuthenticated && (
       <div className='text-center sm:text-left'>
-       <h1 className='rounded-full py-2 font-semibold bg-white bg-opacity-10 items-center group focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2'>You Are Not Logged In, Please Login!</h1>
+        <br />
+       <h1 className='rounded-full py-2 font-semibold'>You Are Not Logged In, Please Login!</h1>
+       <hr />
        <h2>⬇️</h2>
-       <div className='rounded-full px-3 py-2 font-semibold bg-white bg-opacity-10  items-center group focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2'>
+       <Button>
        <LoginButton />
-       </div>
+       </Button>
       </div>
      )}
     </>

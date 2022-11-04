@@ -14,7 +14,7 @@ type ProductsProps = {
 
 const Products = () => {
 
-    const [data, setData] = useState([])
+    const [data, setData] = useState<any[]>([])
     const [filter, setFilter] = useState(data)
     const [loading, setLoading] = useState(false)
     let componentMounted = true;
@@ -54,7 +54,7 @@ const Products = () => {
     }
 
 
-    const filterProduct = (cat) => {
+    const filterProduct = (cat: string) => {
         const updatedList = data.filter((x) => x.category === cat );
         setFilter(updatedList)
     }

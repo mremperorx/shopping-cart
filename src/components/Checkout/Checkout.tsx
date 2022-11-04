@@ -1,6 +1,6 @@
 import { Button, Stack } from "react-bootstrap"
 import { CartItem } from "../Cart/CartItem"
-import StoreItem from "../../data/items.json"
+import StoreItem from "../../data/products.json"
 import { useShoppingCart } from "../../context/ShoppingCartContext"
 import { formatCurrency } from "../../utilities/formatCurreny"
 import { Link } from "react-router-dom"

@@ -1,4 +1,4 @@
-import storeItems from "../data/items.json"
+import storeItems from "../data/products.json"
 import { Col, Row} from "react-bootstrap"
 import { StoreItem } from "../components/StoreItem"
 
