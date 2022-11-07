@@ -1,16 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { formatCurrency } from '../utilities/formatCurreny'
 import Skeleton from "react-loading-skeleton"
-import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-
-type ProductsProps = {
-    id:number
-    title:string
-    price: number
-    image: string
-}
 
 const Products = () => {
 
@@ -73,13 +65,13 @@ const Products = () => {
 
                 {filter.map((product) => {
                           return (
-                            <div className='w-full max-w-sm rounded-lg shadow-md' style={{width: "18rem"}}>
+                            <div  style={{width: "15rem"}}>
                             <div key={product.id}>
                             <Link to="/store">  <img className="p-8 rounded-t-lg" src={product.image} alt="product image"  height="200px" style={{objectFit: "cover"}} /> </Link> 
                            
                                     <div className="flex justify-between items-center text-black">
                                         <h5 className="card-title">{product.title}</h5>
-                                        <p className="card-text ">{formatCurrency  (product.price)}</p>
+                                        <p className="card-text">{formatCurrency  (product.price)}</p>
                                     </div> 
                             </div>
                             </div>
@@ -95,7 +87,7 @@ const Products = () => {
             <div className="container my-5 py-5">
                 <div className="row">
                     <div className="col-12 mb-5">
-                        <h1 className='display-6 fw-bolder text-center'>Latest Products</h1>
+                        <h1 className='display-6 fw-bolder text-center'>New Products 🆕</h1>
                         <hr />
                     </div>
                 </div>
@@ -103,7 +95,6 @@ const Products = () => {
                     {loading ? <Loading /> : <ShowProducts />}
                 </div>
             </div>
-
         </div>
     )
 }

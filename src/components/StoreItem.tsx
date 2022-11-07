@@ -17,7 +17,7 @@ export function StoreItem( {id, name, price, image}: StoreItemProps) {
     const quantity = getItemQuantity(id)
 
     return (
-     <div className="w-full max-w-sm rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+     <div className="h-100 max-w-sm rounded-lg shadow-[0px_22px_70px_4px_rgba(0,0,0,0.56)]">
         <a href="#">
         <img className="p-8 rounded-t-lg" src={image} alt="product image"  height="200px" style={{objectFit: "cover"}} />
     </a>
@@ -34,7 +34,7 @@ export function StoreItem( {id, name, price, image}: StoreItemProps) {
             <div className="flex justify-between items-center">
             <span className="text-3xl font-bold text">{formatCurrency (price)}</span>
             {quantity === 0 ? (
-                <Button  onClick={() => increaseCartQuantity(id)}>+ Add To Cart</Button>
+                <Button onClick={() => increaseCartQuantity(id)}>+ Add To Cart</Button>
             ) : (
             <div className="d-flex align-items-center flex-column" style={{gap: ".5rem"}}>
                 <div className="d-flex align-items-center flex-column" style={{gap: ".5rem"}}>

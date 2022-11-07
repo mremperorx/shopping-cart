@@ -24,7 +24,7 @@ const Checkout =() => {
             )}
           </div>
         </Stack>
-        <Link to="/creditcard"><Button className="container">Pay!</Button></Link>
+        <Link to="/paypal"><Button className="container">Pay!</Button></Link>
     </div>
   )
 }

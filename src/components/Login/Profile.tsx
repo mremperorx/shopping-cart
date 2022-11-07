@@ -9,6 +9,7 @@ const Profile = () => {
     const { user, isAuthenticated } = useAuth0()
   return (
     <>
+    <br />
     {isAuthenticated && (
         <Tilt>
         <img className='mx-auto' src={user?.picture} alt={user?.name} />
