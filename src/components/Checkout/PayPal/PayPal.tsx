@@ -9,7 +9,7 @@ const paypalScriptOptions: PayPalScriptOptions = {
   currency: "USD"
 };
 
-const PayPal = ()  => {
+export default function PayPal() {
   return (
     <div className="text-center mt-20">
       <PayPalScriptProvider options={paypalScriptOptions}>
@@ -18,6 +18,3 @@ const PayPal = ()  => {
     </div>
   );
 }
-
-
-export default PayPal

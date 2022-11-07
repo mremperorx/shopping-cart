@@ -4,6 +4,9 @@ import StoreItem from "../../data/products.json"
 import { useShoppingCart } from "../../context/ShoppingCartContext"
 import { formatCurrency } from "../../utilities/formatCurreny"
 import { Link } from "react-router-dom"
+import { PayPalScriptProvider } from "@paypal/react-paypal-js"
+import { PayPalScriptOptions } from "@paypal/paypal-js/types/script-options";
+
 
 
 const Checkout =() => {
@@ -24,6 +27,7 @@ const Checkout =() => {
             )}
           </div>
         </Stack>
+        
         <Link to="/paypal"><Button className="container">Pay!</Button></Link>
     </div>
   )

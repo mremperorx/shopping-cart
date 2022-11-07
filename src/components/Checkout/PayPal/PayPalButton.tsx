@@ -1,38 +1,42 @@
-import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
+import {  PayPalButtons, usePayPalScriptReducer} from "@paypal/react-paypal-js";
+import { PayPalScriptOptions } from "@paypal/paypal-js/types/script-options";
 import { PayPalButtonsComponentProps } from "@paypal/paypal-js/types/components/buttons";
 
-  
-
-const PayPalButton = () => {
-
-    const [{ isPending }] = usePayPalScriptReducer();
-    const paypalbuttonTransactionProps: PayPalButtonsComponentProps  = { style: { layout: "vertical" },
-      createOrder(data: any, actions: { order: { create: (arg0: { purchase_units: { amount: { value: string; }; }[]; }) => any; }; }) {
-        return actions.order.create({
-          purchase_units: [
-            {
-              amount: {
-                value: "0.01"
-              }
+function PayPalButton() {
+  const [{ isPending }] = usePayPalScriptReducer();
+  const paypalbuttonTransactionProps: PayPalButtonsComponentProps = {
+    style: { layout: "vertical" },
+    createOrder(data: any, actions: { order: { create: (arg0: { purchase_units: { amount: { value: string; }; }[]; }) => any; }; }) {
+      return actions.order.create({
+        purchase_units: [
+          {
+            amount: {
+              value: ""
             }
-          ]
-        });
-      },
-       async onApprove(data: any, actions: { order: { capture: (arg0: {}) => Promise<{ payer: { name: { given_name: any; }; }; }>; }; }) {
-        const details = actions.order.capture({});
+          }
+        ]
+      });
+    },
+    onApprove(data: any, actions: { order: { capture: (arg0: {}) => Promise<any>; }; }) {
+     
+      return actions.order.capture({}).then((details: { payer: { name: { given_name: any; }; }; }) => {
         alert(
           "Transaction completed by" +
-          ((await details)?.payer.name.given_name ?? "No details")
+            (details?.payer.name.given_name ?? "No details")
         );
+
         alert("Data details: " + JSON.stringify(data, null, 2));
-      }
-    };
-    return (
-      <>
-        {isPending ? <h2>Load Smart Payment Button...</h2> : null}
-        <PayPalButtons {...paypalbuttonTransactionProps} />
-      </>
-    );
-  }
-  
+      });
+    }
+  };
+  return (
+    <>
+      {isPending ? <h2>Load Smart Payment Button...</h2> : null}
+      <PayPalButtons
+        {...paypalbuttonTransactionProps}
+        style={{ color: "blue", shape: "pill", label: "pay", height: 40 }}
+      />
+    </>
+  );
+}
   export default PayPalButton
