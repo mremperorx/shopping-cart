@@ -15,6 +15,8 @@ export default function PayPal() {
       <PayPalScriptProvider options={paypalScriptOptions}>
         <PayPalButton />
       </PayPalScriptProvider>
+      <img className="mx-auto" src="https://i.ibb.co/SJh0BtX/qrcode.png" />
     </div>
+    
   );
 }

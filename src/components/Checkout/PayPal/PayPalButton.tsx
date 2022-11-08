@@ -1,8 +1,9 @@
-import {  PayPalButtons, usePayPalScriptReducer} from "@paypal/react-paypal-js";
-import { PayPalScriptOptions } from "@paypal/paypal-js/types/script-options";
+import { PayPalButtons, usePayPalScriptReducer} from "@paypal/react-paypal-js";
 import { PayPalButtonsComponentProps } from "@paypal/paypal-js/types/components/buttons";
 
-function PayPalButton() {
+
+ export default function PayPalButton() {
+ 
   const [{ isPending }] = usePayPalScriptReducer();
   const paypalbuttonTransactionProps: PayPalButtonsComponentProps = {
     style: { layout: "vertical" },
@@ -11,14 +12,14 @@ function PayPalButton() {
         purchase_units: [
           {
             amount: {
-              value: ""
+              value: "0.01"
             }
           }
         ]
       });
     },
     onApprove(data: any, actions: { order: { capture: (arg0: {}) => Promise<any>; }; }) {
-     
+  
       return actions.order.capture({}).then((details: { payer: { name: { given_name: any; }; }; }) => {
         alert(
           "Transaction completed by" +
@@ -32,11 +33,9 @@ function PayPalButton() {
   return (
     <>
       {isPending ? <h2>Load Smart Payment Button...</h2> : null}
-      <PayPalButtons
-        {...paypalbuttonTransactionProps}
-        style={{ color: "blue", shape: "pill", label: "pay", height: 40 }}
+      <PayPalButtons {...paypalbuttonTransactionProps}
+      style={{ color: "blue", shape: "pill", label: "pay", height: 40 }}
       />
     </>
   );
 }
-  export default PayPalButton
