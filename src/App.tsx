@@ -4,7 +4,7 @@ import "./App.css"
 import { toast, ToastContainer } from "react-toastify"
 import AnimatedRoutes from "./components/AnimatedRoutes"
 import { useEffect, useState } from "react"
-import PropagateLoader  from "react-spinners/ClipLoader";
+import PacmanLoader from "react-spinners/ClipLoader";
 import style from "./loader.module.css"
 
 
@@ -22,12 +22,11 @@ function App() {
     <>
     <div className="text-center justify-center items-center">
     {loading ? (
-    <PropagateLoader 
+    <PacmanLoader 
     color="#36d7b7"
-     size={100}
+     size={200}
    loading={loading}
   /> ) : (
-   
       <div className="text-black font-inter gap-y-2 flex-col justify-center items-center">
         <ShoppingCartProvider>          
           <Navbar />

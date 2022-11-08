@@ -1,6 +1,6 @@
-import {  PayPalScriptProvider } from "@paypal/react-paypal-js";
+import {  PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { PayPalScriptOptions } from "@paypal/paypal-js/types/script-options";
-import PayPalButton from "./PayPalButton";
+
 
 
 
@@ -13,7 +13,7 @@ export default function PayPal() {
   return (
     <div className="text-center mt-20">
       <PayPalScriptProvider options={paypalScriptOptions}>
-        <PayPalButton  />
+        <PayPalButtons  style={{ color: "blue", shape: "pill", label: "pay", height: 40 }}/>
       </PayPalScriptProvider>
       <img className="mx-auto" src="https://i.ibb.co/SJh0BtX/qrcode.png" />
     </div>
