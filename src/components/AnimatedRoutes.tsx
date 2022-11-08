@@ -1,4 +1,3 @@
-import React from 'react'
 import { Container } from 'react-bootstrap'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { About} from '../pages/About'
@@ -15,7 +14,7 @@ const AnimatedRoutes = () => {
     <AnimatePresence>
     <Container>
     <Routes location={location} key={location.pathname}>
-      <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/store" element={<Store />} />
       <Route path="/about" element={<About />} />
       <Route path="/checkout" element={<Checkout />} />
