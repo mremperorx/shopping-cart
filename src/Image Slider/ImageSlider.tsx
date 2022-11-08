@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { SliderData } from "./SliderData";
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 import "./ImageSlider.css";
+import { motion } from "framer-motion";
 
 
 
@@ -26,7 +27,7 @@ const ImageSlider = () => {
 			<FaArrowCircleLeft className="left-arrow" onClick={prevSlide} />
 			{SliderData.map((data, index) => {
 				return (
-					<div
+					<motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity:0}}
 						className={index === current ? "slide active" : "slide"}
 						key={index}
 					>
@@ -45,7 +46,7 @@ const ImageSlider = () => {
 								</div>
 							</>
 						)}
-					</div>
+					</motion.div>
 				);
 			})}
 			<FaArrowCircleRight className="right-arrow" onClick={nextSlide} />

@@ -22,8 +22,12 @@ export function StoreItem( {id, name, price, image}: StoreItemProps) {
         <img className="p-8 rounded-t-lg" src={image} alt="product image"  height="200px" style={{objectFit: "cover"}} />
     </a>
     <div className="px-5 pb-5">    
-            <h5 className="text-xl font-semibold tracking-tight">{name}</h5>
-              <div className="flex items-center mt-2.5 mb-5">
+              
+        <Card.Title className='d-flex justify-content-between align-items-baseline mb-4'>
+          <span className='fs-2'> {name}</span>
+          <span className='ms-2 text-muted'> {formatCurrency(price)}</span>
+        </Card.Title>
+        <div className="flex items-center mt-2.5 mb-5">
             <svg aria-hidden="true" className="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>First star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
             <svg aria-hidden="true" className="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Second star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
             <svg aria-hidden="true" className="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Third star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
@@ -31,21 +35,36 @@ export function StoreItem( {id, name, price, image}: StoreItemProps) {
             <svg aria-hidden="true" className="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fifth star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
             <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>
         </div>
-            <div className="flex justify-between items-center">
-            <span className="text-3xl font-bold text">{formatCurrency (price)}</span>
-            {quantity === 0 ? (
-                <Button onClick={() => increaseCartQuantity(id)}>+ Add To Cart</Button>
-            ) : (
-            <div className="d-flex align-items-center flex-column" style={{gap: ".5rem"}}>
-                <div className="d-flex align-items-center flex-column" style={{gap: ".5rem"}}>
-                 <Button onClick={() => decreaseCartQuantity(id)}>-</Button>
-                 <div>
-                 <span className="fs-5 text-black">{quantity}</span> <p className="text-black"> in cart </p>
-                 </div>
-                 <Button onClick={() => increaseCartQuantity(id)}>+</Button>
-                 </div>
-                 <Button  onClick={() => removeFromCart(id)} variant="danger" size="sm">Remove</Button>
+        <div className='mt-auto'>
+          {quantity === 0 ? (
+            <Button className='w-100' onClick={() => increaseCartQuantity(id)}>
+              + Add To Cart
+            </Button>
+          ) : (
+            <div
+              className='d-flex align-items-center flex-column'
+              style={{ gap: '.5rem' }}
+            >
+              <div
+                className='d-flex align-items-center justify-content-center'
+                style={{ gap: '.5rem' }}
+              >
+                <Button onClick={() => decreaseCartQuantity(id)}>-</Button>
+                <div>
+                  <span className='fs-3'>{quantity} </span>
+                  in cart
                 </div>
+                <Button onClick={() => increaseCartQuantity(id)}>+</Button>
+              </div>
+              <Button
+                style={{ gap: '.9rem' }}
+                onClick={() => removeFromCart(id)}
+                variant='danger'
+                size='sm'
+              >
+                Remove
+              </Button>
+            </div>
                 )}
             </div>
         </div>

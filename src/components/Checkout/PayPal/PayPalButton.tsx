@@ -33,7 +33,7 @@ import { PayPalButtonsComponentProps } from "@paypal/paypal-js/types/components/
   return (
     <>
       {isPending ? <h2>Load Smart Payment Button...</h2> : null}
-      <PayPalButtons {...paypalbuttonTransactionProps}
+      <PayPalButtons {...paypalbuttonTransactionProps} 
       style={{ color: "blue", shape: "pill", label: "pay", height: 40 }}
       />
     </>

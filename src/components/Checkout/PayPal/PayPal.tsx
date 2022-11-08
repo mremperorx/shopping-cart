@@ -13,7 +13,7 @@ export default function PayPal() {
   return (
     <div className="text-center mt-20">
       <PayPalScriptProvider options={paypalScriptOptions}>
-        <PayPalButton />
+        <PayPalButton  />
       </PayPalScriptProvider>
       <img className="mx-auto" src="https://i.ibb.co/SJh0BtX/qrcode.png" />
     </div>

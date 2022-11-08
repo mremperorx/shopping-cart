@@ -18,7 +18,7 @@ export function Navbar() {
     return (
 
         <nav>
-            <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl shadow-[0px_22px_70px_4px_rgba(0,0,0,0.56)]">
+            <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl shadow-[0px_15px_50px_2px_rgba(0,0,0,0.56)]">
                 <div className="flex items-center">
 
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/V-logo.svg" className="mr-3 h-6 sm:h-9" alt="Victorious Logo" />
