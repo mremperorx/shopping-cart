@@ -12,6 +12,7 @@ const Profile = () => {
     <br />
     {isAuthenticated && (
         <Tilt>
+          <div className="mt-8 bg-white rounded-lg border border-gray-200 shadow-md">
         <img className='mx-auto' src={user?.picture} alt={user?.name} />
         <h2 className="text-4xl text-black font-blod text-center sm:text-left">{user?.name}</h2>
         <h3 className='text-center sm:text-left'>Nickname: {user?.nickname}</h3>
@@ -21,6 +22,7 @@ const Profile = () => {
         <Button variant="danger">
         <LogoutButton />
         </Button>
+        </div>
         </div>
         </Tilt>   
     ) || 

@@ -10,7 +10,7 @@ const ImageSlider = () => {
 	const [current, setCurrent] = useState(0);
 	const length = SliderData.length;
 
-	
+
 	const nextSlide = () => {
 		setCurrent(current === length - 1 ? 0 : current + 1);
 	};
@@ -27,7 +27,7 @@ const ImageSlider = () => {
 			<FaArrowCircleLeft className="left-arrow" onClick={prevSlide} />
 			{SliderData.map((data, index) => {
 				return (
-					<motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity:0}}
+					<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
 						className={index === current ? "slide active" : "slide"}
 						key={index}
 					>

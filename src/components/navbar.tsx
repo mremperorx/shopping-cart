@@ -27,19 +27,19 @@ export function Navbar() {
                 </div>
                 <div className="flex items-center md:order-2">
                     <div className="rounded-full px-3 py-2 font-semibold bg-white bg-opacity-10 flex items-center group focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2">
-                        <LoginButton /> 
+                        <LoginButton />
                         <LogoutButton />
                     </div>
-                     <div>
-                    {isAuthenticated && (
-                         <Link to="/profile"><img className='rounded-circle' style={{ width: "3rem", height: "3rem" }} src={user?.picture} alt={user?.name} /></Link>                           
-                         )
-                        ||
-                        !isAuthenticated && (
-                            <Link to="/profile"><button className="text-white rounded-full bg-pink-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Profile</button></Link>
-                        )}
+                    <div>
+                        {isAuthenticated && (
+                            <Link to="/profile"><img className='rounded-circle' style={{ width: "3rem", height: "3rem" }} src={user?.picture} alt={user?.name} /></Link>
+                        )
+                            ||
+                            !isAuthenticated && (
+                                <Link to="/profile"><button className="text-white rounded-full bg-pink-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Profile</button></Link>
+                            )}
 
-</div>
+                    </div>
                     {cartQuantity > 0 && (<Button onClick={openCart} style={{ width: "3rem", height: "3rem", position: "relative" }}
                         variant="outline-primary"
                         className="rounded-circle">
@@ -68,7 +68,7 @@ export function Navbar() {
 
                         <Link to="/store" className="block py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 "> <button>Store</button></Link>
 
-                        <Link to="/about" className="block py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 "><button>About Us</button></Link>
+                        <Link to="/ContactUs" className="block py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 "><button>Contact Us</button></Link>
                     </ul>
                 </nav>
             </div>

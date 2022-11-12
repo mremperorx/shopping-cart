@@ -19,7 +19,6 @@ const Products = () => {
                 setData(await response.clone().json());
                 setFilter(await response.json())
                 setLoading(false);
-                console.log(filter)
             }
             return () => {
                 componentMounted = false
@@ -31,15 +30,15 @@ const Products = () => {
     const Loading = () => {
         return (
             <>
-               <div className="col-md-3">
-                <Skeleton height={350} />
-               </div>
-               <div className="col-md-3">
-                <Skeleton height={350} />
-               </div>
-               <div className="col-md-3">
-                <Skeleton height={350} />
-               </div>
+                <div className="col-md-3">
+                    <Skeleton height={350} />
+                </div>
+                <div className="col-md-3">
+                    <Skeleton height={350} />
+                </div>
+                <div className="col-md-3">
+                    <Skeleton height={350} />
+                </div>
 
             </>
         )
@@ -47,7 +46,7 @@ const Products = () => {
 
 
     const filterProduct = (cat: string) => {
-        const updatedList = data.filter((x) => x.category === cat );
+        const updatedList = data.filter((x) => x.category === cat);
         setFilter(updatedList)
     }
 
@@ -64,19 +63,19 @@ const Products = () => {
 
 
                 {filter.map((product) => {
-                          return (
-                            <div  style={{width: "15rem"}}>
+                    return (
+                        <div style={{ width: "15rem" }}>
                             <div key={product.id}>
-                            <Link to="/store">  <img className="p-8 rounded-t-lg" src={product.image} alt="product image"  height="200px" style={{objectFit: "cover"}} /> </Link> 
-                           
-                                    <div className="flex justify-between items-center text-black">
-                                        <h5 className="card-title">{product.title}</h5>
-                                        <p className="card-text">{formatCurrency  (product.price)}</p>
-                                    </div> 
+                                <Link to="/store">  <img className="p-8 rounded-t-lg" src={product.image} alt="product image" height="200px" style={{ objectFit: "cover" }} /> </Link>
+
+                                <div className="flex justify-between items-center text-black">
+                                    <h5 className="card-title">{product.title}</h5>
+                                    <p className="card-text">{formatCurrency(product.price)}</p>
+                                </div>
                             </div>
-                            </div>
-                        
-                          )
+                        </div>
+
+                    )
                 })}
             </>
         )

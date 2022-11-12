@@ -2,7 +2,7 @@ export const SliderData = [
 	{
 		image: "https://img.freepik.com/free-vector/drawn-winter-sale-illustration_23-2148707879.jpg?w=826&t=st=1667601646~exp=1667602246~hmac=59e66cc5afd15dcfae02bfd1f6d5f0f3ff32af39bf168c4124067ddba5163581",
 		text: "",
-		
+
 	},
 	{
 		image: "https://images.unsplash.com/photo-1558191053-8edcb01e1da3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGZhc2hpb24lMjBzdG9yZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
