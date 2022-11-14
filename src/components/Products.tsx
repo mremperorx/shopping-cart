@@ -70,7 +70,7 @@ const Products = () => {
 
                                 <div className="flex justify-between items-center text-black">
                                     <h5 className="card-title">{product.title}</h5>
-                                    <p className="card-text">{formatCurrency(product.price)}</p>
+                                    <p className="ms-2 text-muted">{formatCurrency(product.price)}</p>
                                 </div>
                             </div>
                         </div>
